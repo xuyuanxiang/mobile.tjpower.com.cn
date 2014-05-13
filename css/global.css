@@ -1,42 +1,28 @@
 body {
-  font-family: Microsoft Yahei, WenQuanYi Micro Hei, Hiragino Sans GB, sans-serif;
-  font-size: 18px;
-  line-height: 22px;
-  color: #2c3e50;
-  padding: 0;
+	font-family: Microsoft Yahei, WenQuanYi Micro Hei, Hiragino Sans GB, sans-serif;
 }
-ul li {
-	list-style: none;
+p{
+	text-indent: 2em;
 }
-
-header {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 9999;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
 .nav {
 	background-image: url(../img/bg_nav.png);
 	background-repeat: repeat-x;
 	border-bottom: 2px solid #FFFFCC;
 	text-align: center;
 }
+.nav img{
+	margin: auto;
+	padding: 5px;
+}
 
 .bar{
 	background-image: url(../img/bg_subnav.png);
 	background-repeat: repeat-x;
 }
-
 .bar-active{
 	background-image: url(../img/bg_suvnav_active.png);
 	background-repeat: repeat-x;
 }
-
-
 .bar img{
 	margin: auto;
 	padding: 5px;

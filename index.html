@@ -16,7 +16,7 @@
 		<meta name="handheldFriendly" content="true" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<link rel="stylesheet" type="text/css" href="css/normalize.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/global.css"/>
 		<link rel="stylesheet" type="text/css" href="css/global-responsive.css"/>
@@ -25,7 +25,7 @@
 		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<header>
+		<header class="navbar navbar-fixed-top">
 			<div class="nav">
 				<img class="img-responsive" src="img/logo.png" alt="云南腾骏投资集团"/>
 			</div>
@@ -39,7 +39,7 @@
 						<img class="img-responsive" src="img/icon_fresh.png" alt="当鲜"/>
 					</a></span>
 				<span class="bar">
-					<a>
+					<a href="vedio.html">
 						<img class="img-responsive" src="img/icon_vedio.png" alt="视频"/>
 					</a></span>
 				<span class="bar">
@@ -48,8 +48,8 @@
 					</a></span>
 			</nav>
 		</header>
-		<div>
-			<div class="carousel">
+		<div class="container-fluid">
+			<div class="carousel row">
 				<div class="slick">
 					<img class="img-responsive" src="img/1.jpg"/>
 				</div>
@@ -61,17 +61,13 @@
 				</div>
 			</div>
 			<div class="notice">
-				<p class="title">
+				<p class="notice-title">
 					公告及通知
 				</p>
-				<p>
+				<p class="notice-content">
 					公告及通知内容
 				</p>
 			</div>
-			<!--<form class="search-form">
-			<input type="search" placeholder="请输入关键词..."/>
-			<button type="submit"><span class="icon-search"></span>搜索</button>
-			</form>-->
 			<div class="content-nav">
 				<a id="about">
 					<img class="img-responsive" src="img/nav-about-active.png" alt="集团简介"/>
@@ -86,8 +82,8 @@
 					<img class="img-responsive" src="img/nav-fresh.png" alt="当鲜系列"/>
 				</a>
 			</div>
-			<div class="tooltip bottom">
-				<div class="tooltip-inner">
+			<div class="content-subnav bottom">
+				<div class="content-subnav-inner">
 					<a onclick="active('item1')">
 						<span id="item1Ctrl" class="active icon icon-road"> 陆  港</span>
 					</a>
@@ -104,7 +100,7 @@
 						<span id="item3Ctrl"  class="icon icon-truck"> 物  流</span>
 					</a>
 				</div>
-				<div class="tooltip-arrow"></div>
+				<div class="content-subnav-arrow"></div>
 			</div>
 			<div class="content">
 				<div id="item1" class="content-item">
@@ -129,37 +125,13 @@
 					<hr>
 					<p>
 						云南腾俊国际物流有限公司，是云南腾俊集团2005年成立的一家具有承办集陆、海、空进出口货物运输等业务于一体的国际性大型物流企业，也是“中国4A级物流企业”和云南省首家具有跨境运输资质的民营物流企业。在国家“桥头堡”战略中，企业以“大通道、大物流、大商贸”为发展战略，依托规划占地3669亩的“腾俊国际陆港”物流园区项目为业务基地，广泛开展以商贸供应链管理、现代物流等主营业务，为云南的物流经济做出了积极的贡献，成为云南省东南亚南亚经贸合作发展联合会特邀副主席单位和云南省工商联会员单位。
-					</p> 
+					</p>
 				</div>
 			</div>
 		</div>
 		<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
-		<script>
-			$(document).ready(function() {
-				$('.subnav').slick({
-					dots : true,
-					slidesToShow : 4,
-					slidesToScroll : 4,
-					slide : 'span'
-				});
-				$('.carousel').slick({
-					dots : true,
-					autoplay : true
-				});
-				$('.content-nav').slick({
-					dots : true,
-					slidesToShow : 4,
-					slidesToScroll : 4,
-					slide : 'a'
-				});
-			});
-			function active(id){
-				$('.icon').removeClass('active');
-				$('#'+id+'Ctrl').addClass('active')
-				$('.content-item').addClass('inactive');
-				$('#'+id).removeClass('inactive');
-			}
-		</script>
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

@@ -5,31 +5,10 @@
 
 @media (max-width: 320px) {
 	header {
-		height: 100px;
-	}
-	header~div {
-		padding-top: 115px;
-	}
-	.nav {
-		height: 45px;
-	}
-	.subnav {
-		height: 55px;
-	}
-	.bar img{
-		height: 45px;
-	}
-	.bar-active img{
-		height: 45px;
-	}
-}
-
-@media (min-width: 321px) and (max-width:768px) {
-	header {
 		height: 110px;
 	}
 	header~div {
-		padding-top: 125px;
+		margin-top: 120px;
 	}
 	.nav {
 		height: 50px;
@@ -37,36 +16,57 @@
 	.subnav {
 		height: 60px;
 	}
-	.bar img{
+	.bar img {
 		height: 50px;
 	}
-	.bar-active img{
+	.bar-active img {
 		height: 50px;
 	}
 }
 
-@media (min-width: 769px){
+@media (min-width: 321px) and (max-width: 768px) {
 	header {
-		height: 120px;
+		height: 130px;
 	}
 	header~div {
-		padding-top: 135px;
+		margin-top: 140px;
 	}
 	.nav {
-		height: 55px;
+		height: 60px;
 	}
 	.subnav {
-		height: 65px;
+		height: 70px;
 	}
-	.bar img{
-		height: 55px;
+	.bar img {
+		height: 60px;
 	}
-	.bar-active img{
-		height: 55px;
+	.bar-active img {
+		height: 60px;
 	}
 }
 
-@media (min-width: 1224px){
+@media (min-width: 769px) {
+	header {
+		height: 150px;
+	}
+	header~div {
+		margin-top: 160px;
+	}
+	.nav {
+		height: 70px;
+	}
+	.subnav {
+		height: 80px;
+	}
+	.bar img {
+		height: 70px;
+	}
+	.bar-active img {
+		height: 70px;
+	}
+}
+
+@media (min-width: 1224px) {
 
 }
 

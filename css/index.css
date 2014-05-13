@@ -9,17 +9,18 @@
 
 .notice{
 	background-color: #FFFFCC;
-	margin-left: 8px;
-	margin-right: 8px;
 	border: 1px #C0C0C0 solid;
 	border-radius: 5px;
 }
 
-.notice .title{
+.notice .notice-title{
 	font-size: 14pt;
 	font-weight: bold;
 	color: #330000;
 	text-align: center;
+}
+.notice .notice-content{
+	text-indent: 2em;
 }
 
 .content-nav {
@@ -35,28 +36,28 @@
 	float: left;
 }
 
-.tooltip {
+.content-subnav {
   position: absolute;
-  z-index: 1030;
+  z-index: 9;
   display: block;
   font-size: 12pt;
   width: 90%;
   margin-top: -10px;
-  margin-left: 15px;
+  margin-left: 5px;
   border-color: #000000;
   border-width: 0 10px 22px;
 }
 
-.tooltip a{
+.content-subnav a{
 	color: #999999;
 	text-decoration: none;
 }
 
-.tooltip .active{
+.content-subnav .active{
 	color: #330000;
 }
 
-.tooltip-inner {
+.content-subnav-inner {
   padding: 3px 8px;
   color: #fff;
   text-align: left;
@@ -64,7 +65,7 @@
   border-radius: 4px;
 }
 
-.tooltip-arrow {
+.content-subnav-arrow {
   position: absolute;
   width: 0;
   height: 0;
@@ -72,21 +73,16 @@
   border-style: solid;
 }
 
-.tooltip.bottom .tooltip-arrow {
+.content-subnav.bottom .content-subnav-arrow {
   top: -15px;
   left: 10px;
-  margin-left: -5px;
+  margin-left: 15px;
   border-width: 0 10px 20px;
   border-bottom-color: #DDDDDD;
 }
 
 .content{
-	border: 1px #DDDDDD solid;
-	border-radius: 5px;
 	margin-top: 60px;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-bottom: 10px;
 }
 
 .content .inactive{
@@ -105,7 +101,7 @@
 	.slick {
 		height: 180px;
 	}
-	.tooltip.bottom .tooltip-arrow {
+	.content-subnav.bottom .content-subnav-arrow {
   		left: 20px;
   		bottom: 70px;
  	}
