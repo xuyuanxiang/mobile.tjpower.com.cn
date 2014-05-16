@@ -12,19 +12,23 @@
 .verify {
 	position: fixed;
 	z-index: 9;
-	left: 55%;
-	width: 110px;
-	height: 74px;
+	top: 130px;
+	left: 45%;
+	width: 200px;
+	height: 135px;
 	background-image: url(../img/mark.png);
 	background-repeat: no-repeat;
-	font-size: 6px;
-	text-align: right
+	font-size: 12px;
+	text-align: center;
+	
 }
 .verify .verify-text {
-	padding-top: 10px;
-	transform: rotate(-15deg);
-	-ms-transform: rotate(-15deg);	/* IE 9 */
-	-moz-transform: rotate(-15deg);	/* Firefox */
-	-webkit-transform: rotate(-15deg); /* Safari 和 Chrome */
-	-o-transform: rotate(-15deg);
+	padding-top: 30px;
+	padding-left: 80px;
+	line-height: 22px;
+	transform: rotate(-20deg);
+	-ms-transform: rotate(-20deg);	/* IE 9 */
+	-moz-transform: rotate(-20deg);	/* Firefox */
+	-webkit-transform: rotate(-20deg); /* Safari 和 Chrome */
+	-o-transform: rotate(-20deg);
 }
