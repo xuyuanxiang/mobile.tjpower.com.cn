@@ -43,6 +43,10 @@
 	padding-bottom: 25px;
 }
 
+.btn-group{
+	height: 40px;
+}
+
 @media (max-width: 320px) {
 	.verify {
 		position: absolute;
