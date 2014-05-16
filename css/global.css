@@ -4,13 +4,13 @@ body {
 p{
 	text-indent: 2em;
 }
-.nav {
+.logo {
 	background-image: url(../img/bg_nav.png);
 	background-repeat: repeat-x;
 	border-bottom: 2px solid #FFFFCC;
 	text-align: center;
 }
-.nav img{
+.logo img{
 	margin: auto;
 	padding: 5px;
 }
