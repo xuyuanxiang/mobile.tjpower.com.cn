@@ -13,7 +13,7 @@ p {
 }
 .message-box {
 	position: fixed;
-	top: 40%;
+	top: 25%;
 	left: 5%;
 	right: 5%;
 	z-index: 11;
