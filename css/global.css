@@ -1,8 +1,22 @@
 body {
 	font-family: Microsoft Yahei, WenQuanYi Micro Hei, Hiragino Sans GB, sans-serif;
 }
-p{
+p {
 	text-indent: 2em;
+}
+
+.ajax-loader {
+	position: fixed;
+	top: 40%;
+	left: 48%;
+	z-index: 12;
+}
+.message-box {
+	position: fixed;
+	top: 40%;
+	left: 5%;
+	right: 5%;
+	z-index: 11;
 }
 .logo {
 	background-image: url(../img/bg_nav.png);
@@ -10,25 +24,25 @@ p{
 	border-bottom: 2px solid #FFFFCC;
 	text-align: center;
 }
-.logo img{
+.logo img {
 	margin: auto;
 	padding: 5px;
 }
 
-.bar{
+.bar {
 	background-image: url(../img/bg_subnav.png);
 	background-repeat: repeat-x;
 }
-.bar-active{
+.bar-active {
 	background-image: url(../img/bg_suvnav_active.png);
 	background-repeat: repeat-x;
 }
-.bar img{
+.bar img {
 	margin: auto;
 	padding: 5px;
 }
 
-.bar-active img{
+.bar-active img {
 	margin: auto;
 	padding: 5px;
 }

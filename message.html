@@ -14,10 +14,6 @@
 		<meta name="handheldFriendly" content="true" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<script src="js/jquery-1.11.0.min.js" type="text/javascript"
-		charset="utf-8"></script>
-		<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/global.css" />
@@ -61,53 +57,60 @@
 			</nav>
 		</header>
 		<div class="container">
-			<form class="form-horizontal" role="form">
-				<fieldset>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<div id="errorMsg" class="alert alert-warning text-center"
-							style="z-index: 8;"></div>
-							<div id="succMsg" class="alert alert-success text-center"
-							style="z-index: 8;"></div>
-						</div>
+			<div class="ajax-loader">
+				<img src="img/ajax-loader.gif"/>
+			</div>
+			<div class="message-box col-sm-offset-2 col-sm-10">
+				<div id="errorMsg" class="alert alert-warning text-center"
+				style="z-index: 8;"></div>
+				<div id="succMsg" class="alert alert-success text-center"
+				style="z-index: 8;"></div>
+			</div>
+			<form class="form-horizontal" role="form" style="margin-top: -5px;">
+				<div class="form-group">
+					<label for="inputName" class="col-sm-2 control-label">姓名：</label>
+					<div class="col-sm-10">
+						<input id="inputName" class="form-control error" type="text"
+						placeholder="请在此处输入您的姓名...">
 					</div>
-					<div class="form-group">
-						<label for="inputName" class="col-sm-2 control-label">姓名：</label>
-						<div class="col-sm-10">
-							<input id="inputName" class="form-control error" type="text"
-							placeholder="请在此处输入您的姓名...">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputMsg" class="col-sm-2 control-label">留言：</label>
-						<div class="col-sm-10">
-							<textarea id="inputMsg" rows="5" class="form-control"
+				</div>
+				<div class="form-group">
+					<label for="inputMsg" class="col-sm-2 control-label">留言：</label>
+					<div class="col-sm-10">
+						<textarea id="inputMsg" rows="5" class="form-control"
 							placeholder="请在此处输入您的留言..."></textarea>
-						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button id="submitBtn" class="btn btn-block btn-success btn-large" data-loading-text="正在提交..." type="button">
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button id="submitBtn" class="btn btn-block btn-success btn-large" data-loading-text="正在提交..." type="button">
+							<center style="height: 35px;margin-top: 22px">
 								提交
-							</button>
-						</div>
+							</center>
+						</button>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<a class="btn btn-block btn-success pull-right" href="tel:10086">
-								<img width="120px" height="40px" style="margin-left: auto; margin-right: auto;"  class="img-responsive" src="img/callme.png" />
-							</a>
-						</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<a class="btn btn-block btn-success pull-right" href="tel:10086">
+							<center>
+								<img width="100px;" class="img-responsive" src="img/callme.png" />
+							</center>
+						</a>
 					</div>
-				</fieldset>
+				</div>
 			</form>
-
 		</div>
+		<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$('#errorMsg').hide();
 			$('#succMsg').hide();
 			$('#submitBtn').bind('click', submit);
+			$('.ajax-loader').hide();
 			function submit() {
+				$('.ajax-loader').fadeIn();
 				var name = $('#inputName').val();
 				var content = $('#inputMsg').val();
 				var msg = '';
@@ -126,6 +129,7 @@
 					});
 				}
 				if (msg != '') {
+					$('.ajax-loader').hide();
 					$('#errorMsg').html(msg);
 					$('#errorMsg').fadeIn(1000);
 					setTimeout(function() {
@@ -144,6 +148,7 @@
 						data : "name=" + name + "&content=" + content,
 						async : true,
 						success : function(data) {
+							$('.ajax-loader').hide();
 							if (data == 1) {
 								$('#inputName').val('');
 								$('#inputMsg').val('');
@@ -151,12 +156,14 @@
 								$('#succMsg').fadeIn(1000);
 								setTimeout(function() {
 									$('#succMsg').hide(1000);
-								}, 2000);
+								}, 2500);
 							}
+						},
+						error : function() {
+							$('.ajax-loader').hide();
 						}
 					});
 				}
-
 			}
 		</script>
 	</body>

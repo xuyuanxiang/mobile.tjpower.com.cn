@@ -1,9 +1,10 @@
-.telephone{
+.telephone {
 	position: fixed;
 	z-index: 8;
 	top: 120px;
 	right: 10px;
 }
-.form-horizontal{
+.form-horizontal {
 	margin-top: 25px;
 }
+
