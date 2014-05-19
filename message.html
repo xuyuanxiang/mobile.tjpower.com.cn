@@ -117,14 +117,14 @@
 				if (name == '') {
 					msg += "<p>请输入您的姓名！</p>";
 					$('#inputName').parent().addClass('has-error');
-					$('#inputName').bind('focus',function(){
+					$('#inputName').bind('focus', function() {
 						$(this).parent().removeClass('has-error');
 					});
 				}
 				if (content == '') {
 					msg += "<p>请输入留言内容！</p>";
 					$('#inputMsg').parent().addClass('has-error');
-					$('#inputMsg').bind('focus',function(){
+					$('#inputMsg').bind('focus', function() {
 						$(this).parent().removeClass('has-error');
 					});
 				}
@@ -141,7 +141,10 @@
 					$('#errorMsg').hide();
 					$.ajax({
 						type : "post",
-						url : "message.do?name=" + name + "&content=" + content,
+						dataType : "JSONP",
+						jsonpCallback : "callback",
+						url : "message/create.do",
+						data : "name=" + name + "&content=" + content,
 						async : true,
 						success : function(data) {
 							if (data == 1) {
