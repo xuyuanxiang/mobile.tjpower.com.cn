@@ -66,79 +66,79 @@
 		</header>
 		<div class="container-fluid">
 			<div class="screen row">
-				<div class="pull-left" style="width: 65%;">
-					<img src="img/pic_apple.png" class="img-responsive"/>
+				<!--<div class="pull-left" style="width: 100%;">
+				<img style="min-width: 100%" src="img/pic_apple.png" class="img-responsive"/>
 				</div>
 				<div class="verify">
-					<img src="img/mark.png" class="img-responsive"/>
+				<img src="img/mark.png" class="img-responsive"/>
 				</div>
 				<div class="text-left">
-					<p>
-						产　　地：
-					</p>
-					<p>
-						生产日期：
-					</p>
-				</div>
+				<p>
+				产　　地：
+				</p>
+				<p>
+				生产日期：
+				</p>
+				</div>-->
 			</div>
 			<div>
-				<table class="table table-responsive table-striped">
+				<table class="table table-responsive table-striped text-left">
 					<legend>
-						<strong class="text-center">预售88元新鲜水果红富士</strong>
+						<strong class="text-center"></strong>
 					</legend>
-					<h3><span class="label label-success label">红富士</span></h3>
+					<!--<h3><span class="label label-success label">红富士</span></h3>-->
 					<tr>
-						<td>促销：</td>
-						<td colspan="3"><span class="label label-danger">预定专享</span>￥88</td>
+						<td width="60px;">促销：</td>
+						<td colspan="3" align="left"><span class="label label-danger">预定专享</span>￥<span id="fieldPrice"></span></td>
 					</tr>
 					<tr>
-						<td>原价：</td>
-						<td></td>
-						<td>促销： </td>
-						<td></td>
+						<td>年份：</td>
+						<td id="fieldYears"></td>
+						<td width="60px;">产地： </td>
+						<td id="fieldArea"></td>
 					</tr>
 					<tr>
-						<td>销量：</td>
-						<td>10件</td>
-						<td>库存：</td>
-						<td></td>
+						<td>颜色：</td>
+						<td id="fieldColor"></td>
+						<td>品级：</td>
+						<td id="fieldDegree"></td>
 					</tr>
-					<tr>
-						<td>配送：</td>
-						<td>昆明 至 昆明</td>
-						<td>快递：</td>
-						<td>0.00</td>
-					</tr>
+					<!--<tr>
+					<td>配送：</td>
+					<td>昆明 至 昆明</td>
+					<td>快递：</td>
+					<td>0.00</td>
+					</tr>-->
 				</table>
-				<ul class="nav nav-tabs">
-					<li class="active">
-						<a href="#home" data-toggle="tab">
-							产品简介
-						</a>
-					</li>
-					<li>
+				<div id="intro">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#fieldMemo" data-toggle="tab">
+								产品简介
+							</a>
+						</li>
+						<!--<li>
 						<a href="#profile" data-toggle="tab">
-							产品产地
+						产品产地
 						</a>
-					</li>
-					<li>
+						</li>
+						<li>
 						<a href="#messages" data-toggle="tab">
-							产品详情
+						产品详情
 						</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="home">
-						产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1
-					</div>
-					<div class="tab-pane" id="profile">
+						</li>-->
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="fieldMemo"></div>
+						<!--<div class="tab-pane" id="profile">
 						产品简介产品简介2产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1
-					</div>
-					<div class="tab-pane" id="messages">
+						</div>
+						<div class="tab-pane" id="messages">
 						产品简介产品简介3产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1
-					</div>
-					<div class="tab-pane" id="settings">
+						</div>
+						<div class="tab-pane" id="settings">
 						产品简介产品简介4产品简介产品简介1产品简介产品简介1产品简介产品简介1产品简介产品简介1
+						</div>-->
 					</div>
 				</div>
 				<div class="btn-group btn-group-justified"></div>
@@ -148,5 +148,79 @@
 		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(document).ready(function() {
+				$.ajax({
+					type : "get",
+					url : "http://192.168.3.74:8080/tjpowermgm/productins/selectNewsProducts",
+					dataType : "jsonp",
+					data : "page=1&rows=10&productId=" + getUrlParam("productId"),
+					jsonpCallback : "callback",
+					async : true,
+					success : successResponse,
+					error : function(error) {
+						alert(error);
+					}
+				});
+			});
+
+			function successResponse(data) {
+				var product = data.rows[0];
+				var html = '';
+				if (getUrlParam("flag")) {
+					html = '<div class="pull-left" style="width: 50%;">';
+					html += '<img style="min-width: 100%" src="img/pic_apple.png" class="img-responsive"/></div>';
+					html += '<div class="verify"><img src="img/mark.png" class="img-responsive"/></div>';
+					html += '<div class="pull-left" style="width: 50%;font-size:8px;"><p><small>产　　地：</small></p>';
+					html += '<p><small>生产日期：' + dateFormat(product.producedate, 'yyyy.MM.dd') + '</small></p></div>';
+				} else {
+					html = '<div class="pull-left" style="width: 100%;">';
+					html += '<img style="min-width: 100%" src="img/pic_apple.png" class="img-responsive"/></div>';
+				}
+				$('.screen').html(html);
+
+				var color = "";
+				if (product.colorText) {
+					color = product.colorText;
+				} else {
+					switch (product.color) {
+						case 1:
+							color = "红色";
+							break;
+						case 2:
+							color = "绿色";
+						default:
+							break;
+					}
+				}
+				var degree = "";
+				if (product.degreeText) {
+					degree = product.degreeText;
+				} else {
+					switch (product.degree) {
+						case 1:
+							degree = "特级";
+							break;
+						case 2:
+							degree = "优质";
+							break;
+						default:
+							break;
+					}
+				}
+
+				$('legend strong').html(product.name || "");
+				$('#fieldPrice').html(product.price || "");
+				$('#fieldYears').html(product.years || "");
+				//				$('#fieldArea').html(product.areaId);
+				$('#fieldDegree').html(degree);
+				$('#fieldColor').html(color);
+				if (product.memo) {
+					$('#fieldMemo').html(product.memo);
+				} else {
+					$('#intro').hide();
+				}
+			}
+		</script>
 	</body>
 </html>

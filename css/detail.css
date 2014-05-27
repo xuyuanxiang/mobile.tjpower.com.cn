@@ -51,8 +51,8 @@
 	.verify {
 		position: absolute;
 		z-index: 9;
-		top: 135px;
-		left: 50%;
+		top: 125px;
+		left: 35%;
 	}
 	.verify img {
 		width: 110px;
@@ -64,11 +64,11 @@
 	.verify {
 		position: absolute;
 		z-index: 9;
-		top: 160px;
-		left: 50%
+		top: 145px;
+		left: 38%
 	}
 	.verify img {
-		width: 150px;
+		width: 130px;
 	}
 }
 
@@ -76,8 +76,8 @@
 	.verify {
 		position: absolute;
 		z-index: 9;
-		top: 180px;
-		left: 55%;
+		top: 145px;
+		left: 40%;
 	}
 	.verify img {
 		width: 180px;
@@ -88,11 +88,11 @@
 	.verify {
 		position: absolute;
 		z-index: 9;
-		top: 210px;
+		top: 200px;
 		left: 40%;
 	}
 	.verify img {
-		width: 240px;
+		width: 260px;
 	}
 
 }
@@ -100,10 +100,10 @@
 	.verify {
 		position: absolute;
 		z-index: 9;
-		top: 210px;
-		left: 30%;
+		top: 260px;
+		left: 42%;
 	}
 	.verify img {
-		width: 240px;
+		width: 320px;
 	}
 }
