@@ -1,0 +1,33 @@
+{
+	"total": 1,
+	"rows": [
+		{
+			"name": "山竹",
+			"id": "948cfc26acce43d08904022f984c171a",
+			"version": null,
+			"code": null,
+			"years": "2014",
+			"memo": null,
+			"createdate": 1401033600000,
+			"creator": "loginUserName",
+			"updatedate": 1401033600000,
+			"updator": "loginUserName",
+			"entitytypeId": null,
+			"locationId": null,
+			"areaId": null,
+			"productId": null,
+			"origincountry": null,
+			"unit": 1,
+			"color": 1,
+			"degree": 1,
+			"expiredate": 1401033600000,
+			"originlocationId": null,
+			"producedate": 1401033600000,
+			"batchno": 201405260001,
+			"scancode": null,
+			"qrcode": null,
+			"price": 200,
+			"informationcodeId": null
+		}
+	]
+}
